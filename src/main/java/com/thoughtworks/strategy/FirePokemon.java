@@ -1,6 +1,12 @@
 package com.thoughtworks.strategy;
 
 public abstract class FirePokemon {
+    EvolveBehaviour evolveBehaviour;
+
+    public void setEvolveBehaviour(EvolveBehaviour evolveBehaviour) {
+        this.evolveBehaviour = evolveBehaviour;
+    }
+
     public String attack() {
         return "Attackkk!";
     }
@@ -9,5 +15,8 @@ public abstract class FirePokemon {
         return "Observe opponent - so defend";
     }
 
+    public String evolvePokemon() {
+        return evolveBehaviour.evolve();
+    }
     public abstract String display();
 }
